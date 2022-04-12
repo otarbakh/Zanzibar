@@ -71,13 +71,13 @@ class MainActivity : AppCompatActivity() {
             if((randomDiceNum == 5 && randomDIceNum2 == 6 )|| (randomDIceNum2 == 5 && randomDiceNum == 6)){
                 findViewById<TextView>(R.id.result).text = "PLAYER2 WON!!!"
                 findViewById<ImageView>(R.id.win_pic).setImageResource(R.drawable.ic__win)
-                clickLeftbutton.isClickable = false
+                clickRightbutton.isClickable = false
 
             }
             if(player2Score >= 111){
                 findViewById<TextView>(R.id.result).text = "PLAYER2! WIN !!!"
                 findViewById<ImageView>(R.id.win_pic).setImageResource(R.drawable.ic__win)
-                clickLeftbutton.isClickable = false
+                clickRightbutton.isClickable = false
 
             }
 
