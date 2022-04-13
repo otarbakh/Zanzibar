@@ -12,7 +12,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        var clickLeftbutton:Button = findViewById(R.id.roll)
+        var clickLeftbutton:Button = findViewById(R.id.roll) /// var ის ნაცვლად შეგიძლია val გამოიყენო
         var clickRightbutton:Button = findViewById(R.id.roll1)
         var leftDice:ImageView = findViewById(R.id.firstDice)
         var rightDice:ImageView = findViewById(R.id.secondDice)
@@ -31,11 +31,13 @@ class MainActivity : AppCompatActivity() {
                 sum *= 2
             }
             if((randomDiceNum == 5 && randomDIceNum2 == 6 )|| (randomDIceNum2 == 5 && randomDiceNum == 6)){
+                // ეს შეგიძლიაა ცალკე მეთოდში გაიტაანო displayWin() დუპლიკააციაა რო არ გამოგივიდეს
                 findViewById<TextView>(R.id.result).text = "PLAYER1 WIN !!!"
                 findViewById<ImageView>(R.id.win_pic).setImageResource(R.drawable.ic__win)
                 clickLeftbutton.isClickable = false
             }
             if(player1Score >= 111){
+                // აქაა დუბლირებული
                 findViewById<TextView>(R.id.result).text = "PLAYER1 WIN !!!"
                 findViewById<ImageView>(R.id.win_pic).setImageResource(R.drawable.ic__win)
                 clickLeftbutton.isClickable = false
@@ -44,6 +46,8 @@ class MainActivity : AppCompatActivity() {
             score.text = sum.toString()
             player1Score += sum
             scoreP1.text = player1Score.toString()
+
+            // ესეც შეგიძლია გააიტანო მეთოდში რომელსაც გადასცემ გაგორებულ რიცხვს და დაგიბუნებს სწორ სურათის რესურს
             when(randomDIceNum2){
                 1 -> rightDice.setImageResource(R.drawable.ic_dice_1)
                 2 -> rightDice.setImageResource(R.drawable.ic_dice_2)
@@ -69,6 +73,7 @@ class MainActivity : AppCompatActivity() {
                 sum *= 2
             }
             if((randomDiceNum == 5 && randomDIceNum2 == 6 )|| (randomDIceNum2 == 5 && randomDiceNum == 6)){
+                ///იგივე კომენტარი რაც ზემოთ
                 findViewById<TextView>(R.id.result).text = "PLAYER2 WON!!!"
                 findViewById<ImageView>(R.id.win_pic).setImageResource(R.drawable.ic__win)
                 clickRightbutton.isClickable = false
@@ -86,6 +91,7 @@ class MainActivity : AppCompatActivity() {
             score.text = sum.toString()
             player2Score += sum
             scoreP2.text = player2Score.toString()
+            //იგივე კომენტარი რრაც პირველ ლისენერში წერია
             when(randomDIceNum2){
                 1 -> leftDice.setImageResource(R.drawable.ic_dice_1)
                 2 -> leftDice.setImageResource(R.drawable.ic_dice_2)

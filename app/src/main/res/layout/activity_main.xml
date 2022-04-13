@@ -6,9 +6,11 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity"
     android:background="@color/white">
+    <!-- სტრინგები გასატანია რესურსებში!-->
+    <!-- id ები სასურველია რო დააიწყო ვიჯეტის სახელით და შემდეგ მნიშვნელობით მაგ. tvPlayer1Name !-->
+    <!-- marginRight ის ნახვლად marginEnd გამოიყენე უფრო ახლოსაა სხვა პარამეტრებთან !-->
 
     <TextView
-
         android:id="@+id/player1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -38,6 +40,8 @@
 
        />
 
+
+
     <TextView
         android:id="@+id/score"
         android:layout_width="wrap_content"
@@ -58,6 +62,7 @@
         app:layout_constraintTop_toBottomOf="@+id/player2"
         android:layout_marginRight="60dp"/>
 
+    <!-- იმის ნაცვლად რომ მშობელს გაუსწორო შეგიძლია ზედა ვიუებს გაუსწორო  top bottom of score2!-->
 
     <TextView
         android:id="@+id/currentScore"
